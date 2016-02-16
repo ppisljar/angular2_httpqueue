@@ -31,13 +31,13 @@ we could notify him about pending requests and offer him an option to save them 
 
 1. import HttpQueue
 ```
-  import {MyHttp} from './app/services/my-http.service';
+  import {HttpQueue} from './app/services/http-queue.service';
 ```
 2. register provider in bootstrap
 ```
   bootstrap(App, [
     ...HTTP_PROVIDERS,
-    MyHttp
+    HttpQueue
   ])
 ```
 3. import HttpQueue in your components constructor

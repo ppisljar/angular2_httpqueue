@@ -30,21 +30,28 @@ we could notify him about pending requests and offer him an option to save them 
 ### example usage
 
 1. import HttpQueue
+```
   import {MyHttp} from './app/services/my-http.service';
-
+```
 2. register provider in bootstrap
+```
   bootstrap(App, [
     ...HTTP_PROVIDERS,
     MyHttp
   ])
+```
 3. import HttpQueue in your components constructor
+```
   constructor(public httpQueue: HttpQueue) {
+```
 4. use httpQueue just as you would use http
+```
   Observable.interval(10000)
       .switchMap(() => this.httpQueue.get('/', {resend: true}))
       .subscribe(res => {
         console.log(res);
       })
+```
 
 ### more
 
